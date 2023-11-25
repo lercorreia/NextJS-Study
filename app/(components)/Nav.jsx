@@ -1,9 +1,13 @@
 import React from "react";
+import Image from "next/image";
 
 import { MdHomeFilled } from "react-icons/md";
 import { FaTicketAlt } from "react-icons/fa";
 
+import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
+
 import Link from "next/link";
+import imageasset from "../images/pic.png";
 
 export default function Nav() {
     return (
@@ -16,8 +20,15 @@ export default function Nav() {
                     <FaTicketAlt className="icon" />
                 </Link>
             </div>
-            <div>
-                <p className="text-white">email@gmail.com</p>
+            <div className="flex items-center space-x-2">
+                <p className="text-black">email@gmail.com</p>
+                <Image
+                    src={imageasset}
+                    alt="logo1"
+                    width={0}
+                    height={40}
+                    className="avatar-image rounded-full"
+                />
             </div>
         </nav>
     );
